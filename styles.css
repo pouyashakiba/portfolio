@@ -1,0 +1,130 @@
+/* Global */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #1c1c1c;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 85%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+}
+
+/* Navigation Menu */
+nav {
+    background-color: #282c34;
+    padding: 10px 0;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    color: #00ff7f;
+    cursor: pointer;
+}
+
+nav .menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+nav .menu li {
+    margin: 0 20px;
+}
+
+nav .menu li a {
+    color: #00ff7f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav .menu li a:hover {
+    color: white;
+}
+
+/* Typing Animation */
+.typing-animation {
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid;
+    display: inline-block;
+    animation: typewriter 2s steps(40, end), blink 0.75s step-end;
+    animation-fill-mode: backwards;
+}
+
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    from { border-right-color: white; }
+    to { border-right-color: transparent; }
+}
+
+/* Card Styles and Grid Layout */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Dynamic grid for responsive layout */
+    gap: 20px;  /* Space between cards */
+    justify-items: center;
+    margin-top: 1.5rem;
+}
+
+.skill-card, .project-card, .experience-card, .education-card {
+    background-color: #333;
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    width: 100%; /* Ensure full width */
+    max-width: 450px;
+}
+
+.skill-card:hover:not(.expanded),
+.project-card:hover:not(.expanded),
+.experience-card:hover:not(.expanded),
+.education-card:hover:not(.expanded) {
+    transform: scale(1.05);
+}
+
+.expanded {
+    background-color: #444;
+    transform: scale(1.3);
+    z-index: 1;
+}
+
+/* Fix for grid layout on smaller screens */
+@media (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: 1fr; /* Single column layout on small screens */
+    }
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+}
