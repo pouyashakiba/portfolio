@@ -8,9 +8,6 @@ body {
 header{
     padding :80px 20px 20px 20px;
 }
-h1{
-    max-width: 1450px;
-}
 .container {
     max-width: 1450px;
     margin: 0 auto;
@@ -124,7 +121,7 @@ h1{
     border-right: 2px solid rgba(255, 255, 255, 0.75); /* Blinking cursor during typing */
     white-space: nowrap;
     overflow: hidden;
-    width: fit-content;
+    max-width: 1450px;
     margin: 0 auto;
     animation: typing 1.5s steps(40, end) forwards, remove-cursor 0.1s 1.5s forwards; /* Remove cursor after typing is done */
 }
