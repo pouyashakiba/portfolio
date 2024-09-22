@@ -17,9 +17,6 @@ header{
 
 /* Navigation Menu */
 .navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #222;
     position: fixed;
     top: 0;
@@ -54,7 +51,8 @@ header{
 }
 
 .nav-menu a:hover {
-    color: #00ff00;
+    color: #ffffff;
+    
 }
 
 
@@ -80,6 +78,7 @@ header{
 
     .burger-menu {
         display: block;
+        
     }
 
     .nav-menu.active {
@@ -99,7 +98,7 @@ header{
 /* Card Grid */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
     gap: 20px;
     margin-top: 20px;
 }
@@ -118,24 +117,28 @@ header{
     background-color: #444;
 }
 
-/* Typing Animation */
 .typing-animation {
-    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    border-right: 2px solid rgba(255, 255, 255, 0.75); /* Blinking cursor during typing */
     white-space: nowrap;
     overflow: hidden;
-    max-width: 1200px;
+    width: fit-content;
     margin: 0 auto;
-    animation: typing 3.5s steps(40, end), blink 1s infinite;
+    animation: typing 1.5s steps(40, end) forwards, remove-cursor 0.1s 1.5s forwards; /* Remove cursor after typing is done */
 }
 
+/* Typing Animation */
 @keyframes typing {
     from { width: 0; }
-    to { width: 100%; }
+    to { width: 25ch; }
 }
 
-@keyframes blink {
-    50% { border-color: transparent; }
+/* Remove Cursor after typing */
+@keyframes remove-cursor {
+    0% { border-right-color: rgba(255, 255, 255, 0.75); }
+    100% { border-right-color: transparent; }
 }
+
+
 
 /* Navigation Buttons */
 .navigation {
@@ -167,7 +170,7 @@ header{
     color: #00ff00;
 }
 
-.programming-portfolio h1, .programming-portfolio h2, .programming-portfolio p {
+.programming-portfolio h1, .programming-portfolio h2, .programming-portfolio p, .nav-menu a {
     color: #00ff00;
 }
 
@@ -178,7 +181,7 @@ header{
     font-family: 'Press Start 2P', cursive;
 }
 
-.gaming-portfolio h1, .gaming-portfolio h2, .gaming-portfolio p {
+.gaming-portfolio h1, .gaming-portfolio h2, .gaming-portfolio p, .nav-menu a{
     color: #ffcc00;
 }
 
@@ -192,28 +195,27 @@ header{
     color: #FFFFFF;
 }
 
-.it-portfolio h1, .it-portfolio h2, .it-portfolio p {
+.it-portfolio h1, .it-portfolio h2, .it-portfolio p, .nav-menu a {
     color: #FFFFFF;
 }
 
 .it-portfolio .skill-card, .it-portfolio .project-card, .it-portfolio .experience-card, .it-portfolio .education-card {
     background-color: #222;
 }
-.it-portfolio::before {
+.it-portfolio .navbar::before {
     content: ':('; /* The symbol to be displayed */
     font-size: 4rem;
     position: fixed;
-    top: 20px;
-    left: 30px;
-    right: 5px;
+    top: 7%;
+    left: 20px;
+
     color: #FFFFFF; /* Matching the color of the IT theme */
     letter-spacing: -20px; /* Decreases space between characters */
 }
+
+
+
 a{
     text-decoration: none; /* Remove underline */
     color: inherit; /* Keep the original text color */
-}
-a:hover{
-    background-color: #f0f0f0; /* Change background color on hover */
-    transform: scale(1.05); /* Optional: Add hover effects */
 }
