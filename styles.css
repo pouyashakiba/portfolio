@@ -9,7 +9,7 @@ header{
     padding :80px 20px 20px 20px;
 }
 .container {
-    max-width: 1200px;
+    max-width: 1450px;
     margin: 0 auto;
     padding: 20px;
     text-align: center;
@@ -35,6 +35,7 @@ header{
     justify-content: center;
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 
 .nav-menu li {
@@ -57,6 +58,7 @@ header{
 .burger-menu {
     display: none;
     cursor: pointer;
+    float: right;
 }
 
 .burger-menu span {
@@ -79,12 +81,13 @@ header{
     .nav-menu.active {
         display: flex;
         flex-direction: column;
-        position: center;
+        position: absolute;
         top: 60px;
         right: 20px;
         background-color: #333;
         padding: 20px;
         border-radius: 5px;
+        width: 80%;
     }
 }
 
@@ -116,7 +119,7 @@ header{
     border-right: 2px solid rgba(255, 255, 255, 0.75);
     white-space: nowrap;
     overflow: hidden;
-    width: fit-content;
+    max-width: 1200px;
     margin: 0 auto;
     animation: typing 3.5s steps(40, end), blink 1s infinite;
 }
@@ -166,7 +169,7 @@ header{
 
 /* Gaming Portfolio - Arcade Theme */
 .gaming-portfolio {
-    background-color: #000033;
+    background-color: #290033;
     color: #ffcc00;
     font-family: 'Press Start 2P', cursive;
 }
@@ -181,14 +184,26 @@ header{
 
 /* IT Support Portfolio - DOS Blue Screen Theme */
 .it-portfolio {
-    background-color: #002b36;
-    color: #268bd2;
+    background-color: #0078D7;
+    color: #FFFFFF;
 }
-
+.it-portfolio body{
+    
+}
 .it-portfolio h1, .it-portfolio h2, .it-portfolio p {
-    color: #268bd2;
+    color: #FFFFFF;
 }
 
 .it-portfolio .skill-card, .it-portfolio .project-card, .it-portfolio .experience-card, .it-portfolio .education-card {
-    background-color: #073642;
+    background-color: #222;
+}
+.it-portfolio::before {
+    content: ':('; /* The symbol to be displayed */
+    font-size: 4rem;
+    position: fixed;
+    top: 20px;
+    left: 30px;
+    right: 5px;
+    color: #FFFFFF; /* Matching the color of the IT theme */
+    letter-spacing: -20px; /* Decreases space between characters */
 }
