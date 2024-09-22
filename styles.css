@@ -8,6 +8,9 @@ body {
 header{
     padding :80px 20px 20px 20px;
 }
+h1{
+    max-width: 1450px;
+}
 .container {
     max-width: 1450px;
     margin: 0 auto;
